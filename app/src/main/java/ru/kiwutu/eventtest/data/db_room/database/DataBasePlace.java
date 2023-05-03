@@ -9,19 +9,19 @@ import androidx.room.RoomDatabase;
 import ru.kiwutu.eventtest.data.db_room.entity.RoomPlace;
 
 @Database(entities = {RoomPlace.class}, version = 1)
-public abstract class AppDataBasePlace extends RoomDatabase {
+public abstract class DataBasePlace extends RoomDatabase {
 
-    private static AppDataBasePlace instance;
+    private static DataBasePlace instance;
     public abstract RoomPlace roomPlace();
 
-    public static AppDataBasePlace getInstance(Context context) {
-        AppDataBasePlace tempInstance = instance;
+    public static DataBasePlace getInstance(Context context) {
+        DataBasePlace tempInstance = instance;
         if (tempInstance != null)
             return tempInstance;
         else tempInstance = Room.databaseBuilder(
                         context,
-                        AppDataBasePlace.class,
-                        AppDataBasePlace.class.getSimpleName()
+                        DataBasePlace.class,
+                        DataBasePlace.class.getSimpleName()
                 )
                 .build();
         instance = tempInstance;
