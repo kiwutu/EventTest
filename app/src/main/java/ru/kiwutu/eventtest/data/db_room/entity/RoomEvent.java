@@ -11,7 +11,6 @@ import androidx.room.PrimaryKey;
         indices = {@Index(RoomEvent.COL_EVENT_ID)}
 )
 public class RoomEvent {
-
     public static final String NAME_TABLE = "Events";
     public static final String COL_EVENT_ID = "Event_id";
     public static final String COL_EVENT_TITLE = "Event_title";
@@ -70,14 +69,18 @@ public class RoomEvent {
 
     public RoomEvent(
             @NonNull String eventId,
-            String eventTitle,
+            @NonNull String eventTitle,
             String date,
             String place,
             String description,
-            String location, String categories,
-            String ageRestriction, String price,
-            String isFree, String images,
-            String participants) {
+            String location,
+            String categories,
+            String ageRestriction,
+            String price,
+            String isFree,
+            String images,
+            String participants
+    ) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.date = date;

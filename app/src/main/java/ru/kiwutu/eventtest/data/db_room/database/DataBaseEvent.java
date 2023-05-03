@@ -6,13 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import ru.kiwutu.eventtest.data.db_room.dao.EventDAO;
 import ru.kiwutu.eventtest.data.db_room.entity.RoomEvent;
 
 @Database(entities = {RoomEvent.class}, version = 1)
 public abstract class DataBaseEvent extends RoomDatabase {
     private static DataBaseEvent instance;
 
-    public abstract RoomEvent roomEvent();
+    public abstract EventDAO eventDAO();
 
     public static DataBaseEvent getInstance(Context context) {
         DataBaseEvent tempInstance = instance;
