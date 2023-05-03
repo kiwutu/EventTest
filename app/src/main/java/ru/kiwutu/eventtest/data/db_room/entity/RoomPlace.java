@@ -11,7 +11,6 @@ import androidx.room.PrimaryKey;
         indices = {@Index(RoomPlace.COL_PLACE_ID)}
 )
 public class RoomPlace {
-
     public static final String NAME_TABLE = "Place";
     public static final String COL_PLACE_ID = "Place_id";
     public static final String COL_PLACE = "Place_address";
