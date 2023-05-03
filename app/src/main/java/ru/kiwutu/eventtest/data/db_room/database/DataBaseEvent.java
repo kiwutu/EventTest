@@ -9,19 +9,19 @@ import androidx.room.RoomDatabase;
 import ru.kiwutu.eventtest.data.db_room.entity.RoomEvent;
 
 @Database(entities = {RoomEvent.class}, version = 1)
-public abstract class AppDataBaseEvent extends RoomDatabase {
-    private static AppDataBaseEvent instance;
+public abstract class DataBaseEvent extends RoomDatabase {
+    private static DataBaseEvent instance;
 
     public abstract RoomEvent roomEvent();
 
-    public static AppDataBaseEvent getInstance(Context context) {
-        AppDataBaseEvent tempInstance = instance;
+    public static DataBaseEvent getInstance(Context context) {
+        DataBaseEvent tempInstance = instance;
         if (tempInstance != null)
             return tempInstance;
         else tempInstance = Room.databaseBuilder(
                         context,
-                        AppDataBaseEvent.class,
-                        AppDataBaseEvent.class.getSimpleName()
+                        DataBaseEvent.class,
+                        DataBaseEvent.class.getSimpleName()
                 )
                 .build();
         instance = tempInstance;
